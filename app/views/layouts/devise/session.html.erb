@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cdms</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <%= stylesheet_link_tag 'devise/session', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'devise/session', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="<%= controller_name %>-<%= action_name %>">
+
+    <div id="app" class="page">
+      <div class="page-single">
+
+        <div class="container">
+          <div class="row">
+            <div class="col col-login mx-auto">
+
+              <div class="text-center mb-2">
+                <%= link_to admins_root_path do %>
+                  <%= image_tag 'cdms_icon.png', class: 'h-7', alt: 'CDMS' %>
+                <% end %>
+                <p class="text-muted mt-2">Sistema para Gestão de Certificados e Declarações</p>
+              </div>
+
+              <div class="card card-body p-6">
+                <%= render 'shared/flash_messages'%>
+
+                <div class="card-title">
+                  <h4 class="text-center">
+                    <%= yield :title %>
+                  </h4>
+                </div>
+
+                <%= yield %>
+
+              </div> <!-- .card -->
+                <div class="text-center text-muted mt-3">
+                  <%= yield :link %>
+                </div>
+            </div>
+          </div> <!-- .row -->
+        </div> <!-- .container -->
+      </div>
+    </div>
+  </body>
+</html>
