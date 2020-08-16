@@ -12,6 +12,8 @@ x-app: &app
     - db
   networks:
     - app-network
+  stdin_open: true # run an interactive terminal. 
+  tty: true        # teletypewriter, handles connections from terminals  
 
 services:
   web:

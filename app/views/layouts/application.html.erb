@@ -5,11 +5,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body id="<%= controller_name %>-<%= action_name %>">
+
+    <div class="container">
+      <div class="card mt-5">
+        <div class="card-header">
+          <%= image_tag 'cdms_icon.png', class: 'header-brand-img', alt: 'CDMS Icon' %>
+          Sistema para Gestão de Certificados e Declarações
+        </div>
+
+        <div class="card-body" id="main-content">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

@@ -1,0 +1,41 @@
+<div class="fixed-top header py-4">
+  <div class="container-fluid">
+    <div class="d-flex">
+      <%= link_to admins_root_path do %>
+        <% image_tag 'cdms_icon.png', class: 'header-brand-img', alt: 'logo-sgcd' %>
+      <% end  %>
+
+      <span class="d-lg-block mt-1 text-muted font-weight-bold">
+        SGCD
+      </span>
+
+      <div class="d-flex order-lg-2 ml-auto">
+
+        <div class="dropdown">
+          <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+            <span class="avatar" style="background-image: assets-url('default/default-user.png');"></span>
+
+            <span class="ml-2 d-none d-lg-block">
+              <span class="text-default"><%= current_admin.name %></span>
+              <small class="text-muted d-block mt-1"><%= current_admin.email %></small>
+            </span>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+            <%= link_to '#', class: 'dropdown-item' do %>
+              <i class="dropdown-icon far fa-user"></i> Perfil
+            <% end %>
+            <%= link_to destroy_admin_session_path, method: :delete, class: 'dropdown-item' do %>
+              <i class="dropdown-icon fas fa-sign-out-alt"></i> Sair
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="#" class="header-toggler d-lg-none d-md-none ml-3" data-toggle="collapse" data-target="#sidebarMenuCollapse" aria-expanded="true">
+        <span class="header-toggler-icon"></span>
+      </a>
+    </div>
+  </div>
+</div>

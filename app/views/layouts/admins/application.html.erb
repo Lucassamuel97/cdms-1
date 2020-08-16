@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cdms</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <%= stylesheet_link_tag 'admins/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'admins/application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body id="<%= controller_name %>-<%= action_name %>">
+    <div id="page">
+      <div class="page-main">
+
+        <div class="container-fluid mt-0">
+
+          <div class="row">
+            <%= render 'layouts/admins/header' %>
+
+            <div class="col-sm-12 col-md-3 col-lg-2">
+              <%= render 'layouts/admins/sidebar' %>
+            </div>
+
+            <div class="col-md-9 col-lg-10">
+
+              <div id="main-content" class="card">
+                <div class="card-header">
+                  <h1 class="page-title mb-3">
+                    <%= yield(:page_title) %>
+                  </h1>
+                </div>
+
+                <div class="card-body">
+                  <%= render 'shared/flash_messages' %>
+                  <%= yield %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .container -->
+      </div>
+      <%= render 'layouts/admins/footer' %>
+    </div>
+  </body>
+</html>
